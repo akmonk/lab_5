@@ -1,0 +1,12 @@
+diff -Naur output.c output.c
+--- output.c	2015-12-24 21:05:03.476428979 +0400
++++ output.c	2015-12-24 21:05:19.460426075 +0400
+@@ -651,7 +651,7 @@
+ }
+ 
+ static int pr_nice(char *restrict const outbuf, const proc_t *restrict const pp){
+-  if(pp->sched!=0 && pp->sched!=-1) return snprintf(outbuf, COLWID, "-");
++  if(pp->sched!=0 && pp->sched!=-1 && pp->sched!=3) return snprintf(outbuf, COLWID, "-");
+   return snprintf(outbuf, COLWID, "%ld", pp->nice);
+ }
+ 
